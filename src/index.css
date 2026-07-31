@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ff6700;
+  --color-secondary: #1a1a1a;
+
+  --font-sans: "Montserrat", sans-serif;
+  --font-heading: "Oswald", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+@keyframes scan {
+
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(50vw);
+    opacity: 1;
+  }
+}
+
+.animate-scan {
+  animation: scan 8s ease-in-out infinite;
+}
+
+.tech-grid {
+  background-image: radial-gradient(circle, #000 0.5px, transparent 0.5px);
+  background-size: 30px 30px;
+}
+
+:global(.testimonials-swiper .swiper-pagination-bullet) {
+  width: 30px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+:global(.testimonials-swiper .swiper-pagination-bullet-active) {
+  background: var(--primary-color, #ff6700) !important;
+  width: 60px;
+}
+
